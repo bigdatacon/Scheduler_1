@@ -1,17 +1,13 @@
-#include <pybind11/pybind11.h>
-#include <pybind11/stl.h>
+#include <iostream>
+#include "utils.h"
 
-
-#include <vector>
-
-std::vector<int> add_arrays(const std::vector<int>& a, const std::vector<int>& b) {
-    std::vector<int> result;
-    for (size_t i = 0; i < a.size(); i++) {
-        result.push_back(a[i] + b[i]);
+int main() {
+    std::vector<int> a = {1, 2, 3};
+    std::vector<int> b = {434234, 5, 6};
+    std::vector<int> result = add_arrays(a, b);
+    for (int num : result) {
+        std::cout << num << " ";
     }
-    return result;
-}
-
-PYBIND11_MODULE(my_module, m) {
-m.def("add_arrays", &add_arrays, "A function that adds two integer arrays");
+    std::cout << std::endl;
+    return 0;
 }

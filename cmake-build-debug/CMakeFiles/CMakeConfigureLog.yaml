@@ -519,3 +519,38 @@ events:
       
       
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/user1/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/clion/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/user1/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/clion/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/share/cmake-3.27/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/user1/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/clion/CLion-2023.3.2/clion-2023.3.2/bin/cmake/linux/x64/share/cmake-3.27/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "extern/pybind11/tools/pybind11Common.cmake:287 (check_cxx_compiler_flag)"
+      - "extern/pybind11/tools/pybind11Common.cmake:332 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "extern/pybind11/tools/pybind11Common.cmake:399 (_pybind11_generate_lto)"
+      - "extern/pybind11/CMakeLists.txt:247 (include)"
+    checks:
+      - "Performing Test HAS_FLTO"
+    directories:
+      source: "/home/user1/CLionProjects/Scheduler_1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DYoomy"
+      binary: "/home/user1/CLionProjects/Scheduler_1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DYoomy"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: ""
+    buildResult:
+      variable: "HAS_FLTO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/user1/CLionProjects/Scheduler_1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DYoomy'
+        
+        Run Build Command(s): "/home/user1/Рабочий стол/clion/CLion-2023.3.2/clion-2023.3.2/bin/ninja/linux/x64/ninja" -v cmTC_725b9
+        [1/2] /usr/bin/c++ -DHAS_FLTO  -fdiagnostics-color=always   -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_725b9.dir/src.cxx.o -c /home/user1/CLionProjects/Scheduler_1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DYoomy/src.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_725b9.dir/src.cxx.o -o cmTC_725b9  -flto && :
+        
+      exitCode: 0
+...
