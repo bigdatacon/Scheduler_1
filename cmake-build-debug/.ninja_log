@@ -1,0 +1,11 @@
+# ninja log v5
+3	4279	1715053864963609759	CMakeFiles/my_module.dir/module.cpp.o	1bb44df984b3a3e4
+3	404	1715053861091598356	CMakeFiles/Scheduler_1.dir/main.cpp.o	ae7abcd94437803d
+2	4394	1715053176413657669	CMakeFiles/my_module.dir/main.cpp.o	238d3a44f5451b1e
+2	194	1715053323878057828	my_module.cpython-310-x86_64-linux-gnu.so	4b5f35143605ca73
+1	409	1715054083644257920	CMakeFiles/Scheduler_1.dir/main.cpp.o	ae7abcd94437803d
+409	519	1715054083752258242	Scheduler_1	ae95ac8bf74feb2a
+1	4057	1715054087280268756	CMakeFiles/my_module.dir/module.cpp.o	1bb44df984b3a3e4
+4057	4336	1715054087568269614	my_module.cpython-310-x86_64-linux-gnu.so	ac521e0a2ab3868a
+1	390	1715055918269005825	CMakeFiles/Scheduler_1.dir/main.cpp.o	ae7abcd94437803d
+390	485	1715055918365006098	Scheduler_1	ae95ac8bf74feb2a
