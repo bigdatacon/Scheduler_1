@@ -1,7 +1,17 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-#include "utils.h"
+#include "DataContainer.h"
+#include "utils.h"  // Убедитесь, что включаете заголовочный файл с определением функции add_arrays
+
+namespace py = pybind11;
 
 PYBIND11_MODULE(my_module, m) {
+    // Регистрация класса DataContainer
+    py::class_<DataContainer>(m, "DataContainer")
+            .def(py::init<>())  // Default constructor
+            .def("add", &DataContainer::add, "Add a number to the container")
+            .def("get_data", &DataContainer::getData, "Get all data from the container");
+
+    // Регистрация функции add_arrays
     m.def("add_arrays", &add_arrays, "A function that adds two integer arrays");
 }

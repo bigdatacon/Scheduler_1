@@ -3,10 +3,18 @@ sys.path.append('/home/user1/CLionProjects/Scheduler_1/cmake-build-debug')
 import my_module
 
 
-a = [1, 2, 3]
-b = [4, 5, 787987]
-result = my_module.add_arrays(a, b)
+# Использование класса DataContainer
+container = my_module.DataContainer()
+container.add(10)
+container.add(20)
+print("container.get_data()")
+print(container.get_data())  # Выведет [10, 20]
+
+# Использование функции add_arrays
+result = my_module.add_arrays([1, 2, 3], [4, 5, 6])
+print("my_module.add_arrays")
 print(result)  # Выведет [5, 7, 9]
+
 
 
 """

@@ -18,7 +18,8 @@ pybind11_add_module(my_module module.cpp)
 
 # Создаем исполняемый файл
 add_executable(Scheduler_1 main.cpp
-        utils.h)
+        utils.h
+        DataContainer.h)
 
 # Указываем библиотеки для связывания с Python
 target_link_libraries(my_module PRIVATE ${Python3_LIBRARIES})
