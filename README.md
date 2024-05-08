@@ -1,13 +1,15 @@
 как запускать :
 
 у меня скопировано из своей ide код - то есть прям видны пути в моем проекте в терминале
-Чтобы отбросить лишние пути - то есть то что не относится к проекту  - нужно просто не учитывать эту строку  (venv) user1@host1:~/CLionProjects/
 
-(venv) user1@host1:~/CLionProjects/Scheduler_1/cmake-build-debug$ cmake --build .
+
+Scheduler_1/cmake-build-debug$ cmake --build .
 [2/2] Linking CXX executable Scheduler_1
-(venv) user1@host1:~/CLionProjects/Scheduler_1/cmake-build-debug$ ./Scheduler_1
+
+
+Scheduler_1/cmake-build-debug$ ./Scheduler_1
 434235 7 9
-(venv) user1@host1:~/CLionProjects/Scheduler_1/cmake-build-debug$ python3
+Scheduler_1/cmake-build-debug$ python3
 >>> import my_module
 >>> print(my_module.add_arrays([1, 2, 3], [4, 500066, 6999]))
 [5, 500068, 7002]
