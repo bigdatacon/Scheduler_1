@@ -1,3 +1,11 @@
+0. Запуск pybind без CMAKE  
+в корне проекта ::   
+   chmod +x build.sh  
+   ./build.sh  
+Далее запустить файл test_2.py  
+
+
+
 I.  Как запускать без Cmake чтобы отдельно  модули с++ которые не видны python:  
 g++ -o main main.cpp  
 ./main

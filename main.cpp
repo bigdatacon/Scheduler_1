@@ -4,7 +4,7 @@
 
 int main() {
     std::cout << "Пример Использование add_arrays:  " << std::endl;
-    std::vector<int> a = {1, 2, 3};
+    std::vector<int> a = {189089, 2, 3};
     std::vector<int> b = {434234, 5, 6};
     std::vector<int> result = add_arrays(a, b);
     for (int num : result) {
