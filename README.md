@@ -1,4 +1,11 @@
-как запускать :  
+I.  Как запускать без Cmake чтобы отдельно  модули с++ которые не видны python:  
+g++ -o main main.cpp  
+./main
+
+
+
+
+II.  как запускать с Использованием Cmake чтобы python видел модули с++:  
 
 Scheduler_1/cmake-build-debug$ cmake --build .  
 [2/2] Linking CXX executable Scheduler_1
