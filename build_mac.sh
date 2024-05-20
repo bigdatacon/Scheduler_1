@@ -26,18 +26,20 @@ UNAME_S=$(uname -s)
 
 # Additional linker flags for macOS
 if [ "$UNAME_S" = "Darwin" ]; then
-    PYTHON_LIB=$(python3-config --ldflags)"/Frameworks/Python.framework/Versions/$(python3-config --version)/lib"
     ARCH_FLAGS="-arch arm64"  # or "-arch x86_64" if you're using an Intel Mac
 else
     ARCH_FLAGS=""
 fi
 
+# Use clang as the compiler
+COMPILER=clang++
+
 # Compile scheduler_1
-g++ -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
-    module.cpp -o scheduler_1$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS
+$COMPILER -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
+    module.cpp -o scheduler_1$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v
 
 # Compile my_module
-g++ -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
-    my_module.cpp -o my_module$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS
+$COMPILER -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
+    my_module.cpp -o my_module$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v
 
 echo "Build completed."
