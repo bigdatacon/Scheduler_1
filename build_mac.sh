@@ -36,11 +36,10 @@ COMPILER=clang++
 
 # Compile scheduler_1
 $COMPILER -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
-    module.cpp -o scheduler_1$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v
+    module.cpp -o scheduler_1$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v -undefined dynamic_lookup
 
 # Compile my_module
 $COMPILER -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
-    module.cpp -o my_module$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v
-
+    module.cpp -o my_module$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v -undefined dynamic_lookup
 
 echo "Build completed."
