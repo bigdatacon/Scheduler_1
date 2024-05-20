@@ -2,7 +2,15 @@
 в корне проекта ::   
    chmod +x build.sh  
    ./build.sh  
-Далее запустить файл test_2.py  
+Далее запустить файл test_2.py
+
+
+01. Запуск под mac:  
+   source venv/bin/activate  
+chmod +x build_mac.sh    
+./build_mac.sh    
+
+
 
 
 
