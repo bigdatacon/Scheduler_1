@@ -1,4 +1,4 @@
-0. Запуск pybind без CMAKE  
+0. Запуск pybind без CMAKE без task_json:  
 в корне проекта ::   
    chmod +x build.sh  
    ./build.sh  
@@ -8,7 +8,23 @@
 01. Запуск под mac:  
    source venv/bin/activate  
 chmod +x build_mac.sh    
-./build_mac.sh    
+./build_mac.sh     
+
+Внимание ниже  команды для терминала - в vscode можно просто запустить через RUN!  
+1. Запуск без CMAKE через task_json на убунту - в корне проекта:   
+а) компиляция задачи по сборке main.cpp:  
+  /usr/bin/g++ -std=c++17 -O3 main.cpp -o main -Ijson/include  
+b) компиляция задачи по сборке module.cpp:      
+ /usr/bin/g++ -std=c++17 -shared -fPIC -O3 module.cpp InputData.cpp -o my_module.so -Iextern/pybind11/include -Ijson/include $(python3-config --includes) $(python3-config --ldflags)
+
+2. Запуск без CMAKE через task_json на MACOS- в корне проекта:  
+а) компиляция задачи по сборке main.cpp:  
+   /usr/bin/g++ -std=c++17 -O3 main.cpp -o main -Ijson/include  
+
+b) компиляция задачи по сборке module.cpp:   
+/usr/bin/g++ -std=c++17 -shared -fPIC -O3 module.cpp InputData.cpp -o my_module.so -Iextern/pybind11/include -Ijson/include $(python3-config --includes) $(python3-config --ldflags) -undefined dynamic_lookup
+
+
 
 
 

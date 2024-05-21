@@ -1,0 +1,63 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Build my_module.so",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-std=c++17",
+        "-shared",
+        "-fPIC",
+        "-O3",
+        "${workspaceFolder}/module.cpp",
+        "${workspaceFolder}/InputData.cpp",
+        "-o",
+        "${workspaceFolder}/my_module.so",
+        "-I${workspaceFolder}/extern/pybind11/include",
+        "-I${workspaceFolder}/json/include",
+        "$(python3-config --includes)",
+        "$(python3-config --ldflags)",
+        "-undefined", "dynamic_lookup"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Build my_module.so with g++"
+    },
+    {
+      "type": "shell",
+      "label": "Build main",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fcolor-diagnostics",
+        "-fansi-escape-codes",
+        "-std=c++17",
+        "-O3",
+        "${workspaceFolder}/main.cpp",
+        "-o",
+        "${workspaceFolder}/main",
+        "-I${workspaceFolder}/json/include"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Build main.cpp with g++"
+    }
+  ]
+}
