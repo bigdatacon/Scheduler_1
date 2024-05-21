@@ -40,7 +40,7 @@ $COMPILER -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
 
 # Compile my_module
 $COMPILER -O3 -Wall -shared -std=c++17 -fPIC $PYBIND11_INCLUDE $PYTHON_INCLUDE \
-    module.cpp -o my_module$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v -undefined dynamic_lookup
+    module.cpp InputData.cpp -o my_module$(python3-config --extension-suffix) $PYTHON_LIB $ARCH_FLAGS -v -undefined dynamic_lookup
     
 # Compile main.cpp to executable
 $COMPILER -O3 -Wall -std=c++17 main.cpp -o main -v

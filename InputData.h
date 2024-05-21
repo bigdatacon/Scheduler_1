@@ -21,6 +21,7 @@ public:
     ~CMachine();
 
     std::string GetName() const;
+    void SetDischarge(int discharge);
     int GetDischarge() const;
     int GetCost() const;
     const std::vector<std::string>& GetOperationsNames() const;

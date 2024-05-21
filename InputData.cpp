@@ -15,6 +15,10 @@ std::string CMachine::GetName() const {
     return m_sName;
 }
 
+void CMachine::SetDischarge(int discharge) {
+    this->m_nDischarge= discharge;
+}
+
 int CMachine::GetDischarge() const {
     return m_nDischarge;
 }
